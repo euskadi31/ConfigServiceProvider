@@ -1,0 +1,18 @@
+
+%prefix%: test_
+
+cache.options:
+    default:
+        driver: apc
+        lifetime: %life_time%
+        prefix: %prefix%
+    local:
+        driver: filesystem
+        path: %root_path%/cache
+
+redis.options:
+    sentinels:
+        - { host: 10.0.0.4, port: 26379}
+        - { host: 10.0.0.5, port: 26379}
+    server:
+        host: 127.0.0.1
