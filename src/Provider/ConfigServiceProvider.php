@@ -147,13 +147,6 @@ class ConfigServiceProvider implements ServiceProviderInterface
             ));
         }
 
-        if ($this->filename->getExtension() != 'yml') {
-            throw new InvalidArgumentException(sprintf(
-                'The config file "%s" appears to have an invalid format.',
-                $this->filename
-            ));
-        }
-
         return Yaml::parse(file_get_contents($this->filename));
     }
 }
