@@ -5,7 +5,7 @@ vendor: composer.phar
 	@php composer.phar install
 
 test: vendor
-	@phpunit --coverage-text --coverage-html build/coverage
+	@./vendor/bin/phpunit --coverage-text --coverage-html build/coverage
 
 check: vendor
 	@./vendor/bin/phpcs --standard=./vendor/leaphub/phpcs-symfony2-standard/leaphub/phpcs/Symfony2/ ./src
